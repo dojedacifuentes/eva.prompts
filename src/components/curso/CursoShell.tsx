@@ -38,7 +38,7 @@ function StageRail({ current }: { current: StageId }) {
               <Link
                 href={s.route}
                 aria-current={active ? 'step' : undefined}
-                className={`flex min-h-10 items-center gap-1.5 rounded-lg border px-3 py-1.5 text-[12px] font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400 ${
+                className={`flex min-h-10 items-center gap-1.5 rounded-lg border px-3 py-1.5 text-[15px] font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400 ${
                   active
                     ? 'border-cyan-500/50 bg-cyan-500/[0.12] text-cyan-200'
                     : done
@@ -49,7 +49,7 @@ function StageRail({ current }: { current: StageId }) {
                 {done ? (
                   <Check className="h-3 w-3 shrink-0" aria-hidden />
                 ) : (
-                  <span className="mono text-[10px] font-bold" aria-hidden>{i + 1}</span>
+                  <span className="mono text-[13px] font-bold" aria-hidden>{i + 1}</span>
                 )}
                 {s.label}
                 {done && <span className="sr-only"> (completada)</span>}
@@ -72,7 +72,7 @@ function GuidingRibbon() {
   const { state, hydrated } = useCurso();
   if (!hydrated || !state.initialQuestion.committed) return null;
   return (
-    <p className="mono text-[10px] uppercase tracking-[0.16em] text-zinc-500">
+    <p className="mono text-[13px] uppercase tracking-[0.16em] text-zinc-500">
       Pregunta guía · <span className="text-cyan-400/90">{GUIDING_QUESTION}</span>
     </p>
   );
@@ -94,7 +94,7 @@ export function CursoShell({ children }: { children: ReactNode }) {
     <div className="mx-auto w-full max-w-3xl px-4 py-6 sm:px-6 lg:py-10">
       <header className="mb-6 space-y-4">
         <div className="min-w-0">
-          <div className="mono text-[10px] font-bold uppercase tracking-[0.18em] text-cyan-400">
+          <div className="mono text-[13px] font-bold uppercase tracking-[0.18em] text-cyan-400">
             {CURSO_META.subtitle}
           </div>
           <GuidingRibbon />

@@ -164,8 +164,8 @@ export default function ToolkitPage() {
                 <ExternalLink className="w-3 h-3 text-zinc-700 group-hover:text-zinc-400 transition-colors" />
               </div>
               <div className={`text-xs font-bold ${tool.accent}`}>{tool.name}</div>
-              <div className="text-[10px] text-zinc-600 mt-0.5 leading-tight">{tool.desc}</div>
-              <div className={`text-[9px] mt-1.5 mono font-medium ${tool.accent} opacity-60`}>{tool.tag}</div>
+              <div className="text-[13px] text-zinc-600 mt-0.5 leading-tight">{tool.desc}</div>
+              <div className={`text-[13px] mt-1.5 mono font-medium ${tool.accent} opacity-60`}>{tool.tag}</div>
             </a>
           ))}
         </div>
@@ -207,7 +207,7 @@ export default function ToolkitPage() {
             </div>
             <div className="flex flex-col items-end gap-1 shrink-0">
               <span className="text-xs text-zinc-400 mono font-medium">⏱ {flow.time}</span>
-              <span className="text-[10px] text-zinc-600">Verificar cada paso antes de usar</span>
+              <span className="text-[13px] text-zinc-600">Verificar cada paso antes de usar</span>
             </div>
           </div>
 
@@ -266,7 +266,7 @@ export default function ToolkitPage() {
                       {item.item}
                     </span>
                     {item.critical && !checked && (
-                      <span className="ml-2 text-[10px] text-red-400 font-semibold">CRÍTICO</span>
+                      <span className="ml-2 text-[13px] text-red-400 font-semibold">CRÍTICO</span>
                     )}
                   </div>
                 </button>
@@ -307,7 +307,7 @@ export default function ToolkitPage() {
                       {item.item}
                     </span>
                     {item.critical && !checked && (
-                      <span className="ml-2 text-[10px] text-red-400 font-semibold">CRÍTICO</span>
+                      <span className="ml-2 text-[13px] text-red-400 font-semibold">CRÍTICO</span>
                     )}
                   </div>
                 </button>
@@ -340,11 +340,11 @@ export default function ToolkitPage() {
               </div>
               <div className="space-y-2">
                 <div>
-                  <div className="text-[10px] text-emerald-500 font-bold uppercase tracking-wider mb-1">✓ Úsalo para</div>
+                  <div className="text-[13px] text-emerald-500 font-bold uppercase tracking-wider mb-1">✓ Úsalo para</div>
                   <p className="text-xs text-zinc-400 leading-relaxed">{ref.best}</p>
                 </div>
                 <div>
-                  <div className="text-[10px] text-red-400 font-bold uppercase tracking-wider mb-1 flex items-center gap-1">
+                  <div className="text-[13px] text-red-400 font-bold uppercase tracking-wider mb-1 flex items-center gap-1">
                     <AlertTriangle className="w-2.5 h-2.5" /> Evita para
                   </div>
                   <p className="text-xs text-zinc-500 leading-relaxed">{ref.avoid}</p>

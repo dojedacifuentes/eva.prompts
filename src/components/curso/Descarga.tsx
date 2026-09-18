@@ -81,7 +81,7 @@ export function Descarga() {
         </div>
 
         <Collapsible summary="Ver antes de descargar">
-          <pre className="mono max-h-96 overflow-auto whitespace-pre-wrap break-words text-[12px] leading-relaxed text-zinc-400">
+          <pre className="mono max-h-96 overflow-auto whitespace-pre-wrap break-words text-[15px] leading-relaxed text-zinc-400">
             {markdown}
           </pre>
         </Collapsible>

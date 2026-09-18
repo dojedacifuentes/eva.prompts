@@ -67,13 +67,13 @@ export function Auditoria() {
       <Panel>
         <div className="space-y-3">
           <div>
-            <div className="mono text-[10px] font-bold uppercase tracking-[0.16em] text-zinc-500">
+            <div className="mono text-[13px] font-bold uppercase tracking-[0.16em] text-zinc-500">
               Prompt original
             </div>
-            <p className="mono mt-1.5 text-[12.5px] text-zinc-300">«Analiza esta sentencia.»</p>
+            <p className="mono mt-1.5 text-[15px] text-zinc-300">«Analiza esta sentencia.»</p>
           </div>
           <div>
-            <div className="mono text-[10px] font-bold uppercase tracking-[0.16em] text-zinc-500">
+            <div className="mono text-[13px] font-bold uppercase tracking-[0.16em] text-zinc-500">
               Qué vamos a hacer
             </div>
             <p className="mt-1.5 text-sm leading-relaxed text-zinc-300">

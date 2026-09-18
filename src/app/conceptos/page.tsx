@@ -94,7 +94,7 @@ export default function ConceptosPage() {
           Conceptos
         </h1>
         <p className="text-sm text-zinc-500 mt-1">
-          Repaso de vocabulario y conceptos de IA aplicada al Derecho. Pulsa <kbd className="px-1.5 py-0.5 rounded border border-white/10 bg-white/5 text-[10px] mono">espacio</kbd> para voltear, <kbd className="px-1.5 py-0.5 rounded border border-white/10 bg-white/5 text-[10px] mono">←→</kbd> para navegar.
+          Repaso de vocabulario y conceptos de IA aplicada al Derecho. Pulsa <kbd className="px-1.5 py-0.5 rounded border border-white/10 bg-white/5 text-[13px] mono">espacio</kbd> para voltear, <kbd className="px-1.5 py-0.5 rounded border border-white/10 bg-white/5 text-[13px] mono">←→</kbd> para navegar.
         </p>
       </div>
 
@@ -160,10 +160,10 @@ export default function ConceptosPage() {
           >
             {/* Card header */}
             <div className="flex items-center justify-between mb-4">
-              <span className={`text-[10px] font-semibold px-2.5 py-1 rounded-full border ${catColor}`}>
+              <span className={`text-[13px] font-semibold px-2.5 py-1 rounded-full border ${catColor}`}>
                 {card.category}
               </span>
-              <span className="text-[10px] text-zinc-600 mono">{flipped ? 'RESPUESTA' : 'PREGUNTA'}</span>
+              <span className="text-[13px] text-zinc-600 mono">{flipped ? 'RESPUESTA' : 'PREGUNTA'}</span>
             </div>
 
             {/* Content */}
@@ -179,7 +179,7 @@ export default function ConceptosPage() {
                   <p className="text-sm text-zinc-200 leading-relaxed font-medium">{card.back}</p>
                   {card.funFact && (
                     <div className="mt-4 px-3 py-2 rounded-lg border border-cyan-500/15 bg-cyan-500/5 w-full">
-                      <p className="text-[11px] text-cyan-400 leading-relaxed">💡 {card.funFact}</p>
+                      <p className="text-[14px] text-cyan-400 leading-relaxed">💡 {card.funFact}</p>
                     </div>
                   )}
                 </>
@@ -191,7 +191,7 @@ export default function ConceptosPage() {
               <div className={`absolute top-3 right-3 w-5 h-5 rounded-full flex items-center justify-center ${
                 isKnown ? 'bg-emerald-500/30' : 'bg-yellow-500/30'
               }`}>
-                {isKnown ? <Check className="w-3 h-3 text-emerald-400" /> : <span className="text-[10px]">↩</span>}
+                {isKnown ? <Check className="w-3 h-3 text-emerald-400" /> : <span className="text-[13px]">↩</span>}
               </div>
             )}
           </motion.div>

@@ -126,7 +126,7 @@ function FlowCard({ emoji, label, description, selected, onClick, accent = 'cyan
         {emoji && <span className="text-xl shrink-0 mt-0.5">{emoji}</span>}
         <div className="min-w-0 flex-1">
           <div className={`font-bold text-sm leading-tight ${selected ? textMap[accent] : 'text-zinc-200'}`}>{label}</div>
-          {description && <div className="text-[11px] text-zinc-500 mt-1 leading-relaxed">{description}</div>}
+          {description && <div className="text-[14px] text-zinc-500 mt-1 leading-relaxed">{description}</div>}
         </div>
         {selected && (
           <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }}
@@ -153,7 +153,7 @@ function StepWrapper({ stepNum, accent, title, subtitle, children }: StepWrapper
       className="p-6 lg:p-10 max-w-3xl"
     >
       <div className="mb-2">
-        <span className={`text-[9px] mono font-bold ${ringMap[accent]} uppercase tracking-widest`}>
+        <span className={`text-[13px] mono font-bold ${ringMap[accent]} uppercase tracking-widest`}>
           Paso {stepNum} de 12
         </span>
       </div>
@@ -186,24 +186,24 @@ function DNAPanel({ sel, promptPreview }: { sel: FlowSel; promptPreview: string 
       <div className="p-4 border-b border-white/[0.05]">
         <div className="flex items-center gap-2 mb-1">
           <Cpu className="w-3.5 h-3.5 text-cyan-400" />
-          <span className="text-[10px] mono font-bold text-cyan-400 uppercase tracking-widest">Cognitive DNA</span>
+          <span className="text-[13px] mono font-bold text-cyan-400 uppercase tracking-widest">Cognitive DNA</span>
         </div>
-        <div className="text-[10px] text-zinc-600">Runtime v3.0 · Actualización en tiempo real</div>
+        <div className="text-[13px] text-zinc-600">Runtime v3.0 · Actualización en tiempo real</div>
       </div>
 
       <div className="p-4 space-y-2 border-b border-white/[0.05]">
         {rows.map(row => (
           <div key={row.key} className="flex items-center gap-2">
-            <span className={`${row.color} text-[10px] shrink-0 mono w-3`}>{row.value ? '◉' : '○'}</span>
-            <span className="text-[9px] mono text-zinc-600 uppercase tracking-wider w-20 shrink-0">{row.key}</span>
+            <span className={`${row.color} text-[13px] shrink-0 mono w-3`}>{row.value ? '◉' : '○'}</span>
+            <span className="text-[13px] mono text-zinc-600 uppercase tracking-wider w-20 shrink-0">{row.key}</span>
             <AnimatePresence mode="wait">
               {row.value ? (
                 <motion.span key={row.value} initial={{ opacity: 0, x: 4 }} animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -4 }} className="text-[10px] text-zinc-300 font-medium truncate">
+                  exit={{ opacity: 0, x: -4 }} className="text-[13px] text-zinc-300 font-medium truncate">
                   {row.value}
                 </motion.span>
               ) : (
-                <span className="text-[10px] text-zinc-700">···</span>
+                <span className="text-[13px] text-zinc-700">···</span>
               )}
             </AnimatePresence>
           </div>
@@ -214,18 +214,18 @@ function DNAPanel({ sel, promptPreview }: { sel: FlowSel; promptPreview: string 
       {(sel.precision.analytical_depth !== DEFAULT_PRECISION.analytical_depth ||
         sel.precision.verification_strictness !== DEFAULT_PRECISION.verification_strictness) && (
         <div className="p-4 border-b border-white/[0.05]">
-          <div className="text-[9px] mono text-zinc-600 uppercase tracking-wider mb-2">Precision dials</div>
+          <div className="text-[13px] mono text-zinc-600 uppercase tracking-wider mb-2">Precision dials</div>
           {[
             { label: 'Análisis', v: sel.precision.analytical_depth },
             { label: 'Rigor',    v: sel.precision.verification_strictness },
           ].map(d => (
             <div key={d.label} className="flex items-center gap-2 mb-1.5">
-              <span className="text-[9px] text-zinc-600 w-12">{d.label}</span>
+              <span className="text-[13px] text-zinc-600 w-12">{d.label}</span>
               <div className="flex-1 h-1 rounded-full bg-white/[0.05] overflow-hidden">
                 <motion.div className="h-full rounded-full bg-gradient-to-r from-cyan-500 to-indigo-500"
                   animate={{ width: `${d.v}%` }} transition={{ duration: 0.4 }} />
               </div>
-              <span className="text-[9px] mono text-cyan-500 w-6 text-right">{d.v}</span>
+              <span className="text-[13px] mono text-cyan-500 w-6 text-right">{d.v}</span>
             </div>
           ))}
         </div>
@@ -233,7 +233,7 @@ function DNAPanel({ sel, promptPreview }: { sel: FlowSel; promptPreview: string 
 
       {/* Security layers */}
       <div className="p-4 border-b border-white/[0.05]">
-        <div className="text-[9px] mono text-zinc-600 uppercase tracking-wider mb-2">Capas activas</div>
+        <div className="text-[13px] mono text-zinc-600 uppercase tracking-wider mb-2">Capas activas</div>
         <div className="space-y-1.5">
           {[
             { icon: <Brain className="w-2.5 h-2.5" />, label: 'Anti-alucinaciones', on: sel.capas.includes('antihallu') || sel.capas.length === 0 },
@@ -242,8 +242,8 @@ function DNAPanel({ sel, promptPreview }: { sel: FlowSel; promptPreview: string 
           ].map(l => (
             <div key={l.label} className="flex items-center gap-1.5">
               <span className={l.on ? 'text-emerald-400' : 'text-zinc-700'}>{l.icon}</span>
-              <span className={`text-[9px] ${l.on ? 'text-zinc-400' : 'text-zinc-700'}`}>{l.label}</span>
-              {l.on && <span className="text-[8px] text-emerald-500 ml-auto">ON</span>}
+              <span className={`text-[13px] ${l.on ? 'text-zinc-400' : 'text-zinc-700'}`}>{l.label}</span>
+              {l.on && <span className="text-[13px] text-emerald-500 ml-auto">ON</span>}
             </div>
           ))}
         </div>
@@ -252,29 +252,29 @@ function DNAPanel({ sel, promptPreview }: { sel: FlowSel; promptPreview: string 
       {/* Strength meter */}
       <div className="p-4 border-b border-white/[0.05]">
         <div className="flex justify-between items-center mb-2">
-          <span className="text-[9px] mono text-zinc-600 uppercase tracking-wider">Potencia cognitiva</span>
-          <span className="text-[9px] mono text-cyan-500">{Math.round(strength * 100)}%</span>
+          <span className="text-[13px] mono text-zinc-600 uppercase tracking-wider">Potencia cognitiva</span>
+          <span className="text-[13px] mono text-cyan-500">{Math.round(strength * 100)}%</span>
         </div>
         <div className="h-1.5 rounded-full bg-white/[0.05] overflow-hidden">
           <motion.div className="h-full rounded-full bg-gradient-to-r from-cyan-500 to-indigo-500"
             animate={{ width: `${strength * 100}%` }} transition={{ type: 'spring', damping: 20, stiffness: 150 }}
           />
         </div>
-        <div className="text-[9px] text-zinc-600 mt-1.5">{filled}/8 parámetros configurados</div>
+        <div className="text-[13px] text-zinc-600 mt-1.5">{filled}/8 parámetros configurados</div>
       </div>
 
       {/* Preview */}
       <div className="p-4 flex-1">
-        <div className="text-[9px] mono text-zinc-600 uppercase tracking-wider mb-2">Preview</div>
+        <div className="text-[13px] mono text-zinc-600 uppercase tracking-wider mb-2">Preview</div>
         <div className="rounded-lg bg-white/[0.02] border border-white/[0.04] p-3 min-h-[80px]">
           <AnimatePresence mode="wait">
             {promptPreview ? (
               <motion.p key={promptPreview.slice(0, 40)} initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-                className="text-[9px] mono text-zinc-500 leading-relaxed whitespace-pre-wrap break-words">
+                className="text-[13px] mono text-zinc-500 leading-relaxed whitespace-pre-wrap break-words">
                 {promptPreview.slice(0, 240)}{promptPreview.length > 240 ? '…' : ''}
               </motion.p>
             ) : (
-              <p className="text-[9px] text-zinc-700">El runtime construirá el prompt aquí...</p>
+              <p className="text-[13px] text-zinc-700">El runtime construirá el prompt aquí...</p>
             )}
           </AnimatePresence>
         </div>
@@ -302,15 +302,15 @@ function WorkflowPipeline({ sel }: { sel: FlowSel }) {
   };
   return (
     <div className="p-4">
-      <div className="text-[9px] mono font-bold text-zinc-500 uppercase tracking-widest mb-4">
+      <div className="text-[13px] mono font-bold text-zinc-500 uppercase tracking-widest mb-4">
         Cognitive execution pipeline
       </div>
       <div className="hidden md:flex items-center gap-1 overflow-x-auto pb-2">
         {nodes.map((node, i) => (
           <div key={node.label} className="flex items-center gap-1 shrink-0">
             <div className={`rounded-lg border px-3 py-2 text-center min-w-[80px] ${nc[node.color]}`}>
-              <div className="text-[8px] mono uppercase tracking-wider opacity-60 mb-0.5">{node.label}</div>
-              <div className="text-[10px] font-bold truncate max-w-[90px]">{node.value}</div>
+              <div className="text-[13px] mono uppercase tracking-wider opacity-60 mb-0.5">{node.label}</div>
+              <div className="text-[13px] font-bold truncate max-w-[90px]">{node.value}</div>
             </div>
             {i < nodes.length - 1 && <div className="text-zinc-700 text-xs">→</div>}
           </div>
@@ -320,8 +320,8 @@ function WorkflowPipeline({ sel }: { sel: FlowSel }) {
         {nodes.map((node, i) => (
           <div key={node.label} className="flex items-center gap-3">
             <div className={`rounded-lg border px-3 py-2 flex-1 flex justify-between items-center ${nc[node.color]}`}>
-              <span className="text-[9px] mono uppercase tracking-wider opacity-60">{node.label}</span>
-              <span className="text-[10px] font-bold">{node.value}</span>
+              <span className="text-[13px] mono uppercase tracking-wider opacity-60">{node.label}</span>
+              <span className="text-[13px] font-bold">{node.value}</span>
             </div>
             {i < nodes.length - 1 && <div className="text-zinc-700 text-xs ml-1">↓</div>}
           </div>
@@ -329,13 +329,13 @@ function WorkflowPipeline({ sel }: { sel: FlowSel }) {
       </div>
       {sel.capas.length > 0 && (
         <div className="mt-4 pt-4 border-t border-white/[0.05]">
-          <div className="text-[9px] mono text-zinc-600 uppercase tracking-wider mb-2">Capas de seguridad</div>
+          <div className="text-[13px] mono text-zinc-600 uppercase tracking-wider mb-2">Capas de seguridad</div>
           <div className="flex flex-wrap gap-2">
             {sel.capas.map(id => {
               const enh = enhancements.find(e => e.id === id);
               if (!enh) return null;
               return (
-                <span key={id} className="text-[9px] mono px-2 py-1 rounded-md bg-emerald-500/[0.08] border border-emerald-500/20 text-emerald-400">
+                <span key={id} className="text-[13px] mono px-2 py-1 rounded-md bg-emerald-500/[0.08] border border-emerald-500/20 text-emerald-400">
                   {enh.emoji} {enh.label}
                 </span>
               );
@@ -345,7 +345,7 @@ function WorkflowPipeline({ sel }: { sel: FlowSel }) {
       )}
       {/* Precision summary */}
       <div className="mt-4 pt-4 border-t border-white/[0.05]">
-        <div className="text-[9px] mono text-zinc-600 uppercase tracking-wider mb-3">Precision dials activos</div>
+        <div className="text-[13px] mono text-zinc-600 uppercase tracking-wider mb-3">Precision dials activos</div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {[
             { label: 'Profundidad analítica',  v: sel.precision.analytical_depth },
@@ -355,11 +355,11 @@ function WorkflowPipeline({ sel }: { sel: FlowSel }) {
             { label: 'Rigor verificación',     v: sel.precision.verification_strictness },
           ].map(d => (
             <div key={d.label} className="flex items-center gap-2">
-              <span className="text-[9px] text-zinc-600 w-32 shrink-0">{d.label}</span>
+              <span className="text-[13px] text-zinc-600 w-32 shrink-0">{d.label}</span>
               <div className="flex-1 h-1 rounded-full bg-white/[0.05] overflow-hidden">
                 <div className="h-full rounded-full bg-indigo-500/50" style={{ width: `${d.v}%` }} />
               </div>
-              <span className="text-[9px] mono text-zinc-500 w-7 text-right">{d.v}%</span>
+              <span className="text-[13px] mono text-zinc-500 w-7 text-right">{d.v}%</span>
             </div>
           ))}
         </div>
@@ -386,7 +386,7 @@ function AIRecommendStep({
       className="p-6 lg:p-10 max-w-2xl"
     >
       <div className="mb-2">
-        <span className="text-[9px] mono font-bold text-purple-400/60 uppercase tracking-widest">Paso 12 de 12</span>
+        <span className="text-[13px] mono font-bold text-purple-400/60 uppercase tracking-widest">Paso 12 de 12</span>
       </div>
       <h1 className="text-3xl lg:text-4xl font-bold text-white mb-2 leading-tight">IA recomendada</h1>
       <p className="text-zinc-500 text-sm mb-8">Basado en tu objetivo, área y nivel de profundidad</p>
@@ -398,7 +398,7 @@ function AIRecommendStep({
           <div>
             <div className="flex items-center gap-2 mb-1">
               <span className="text-xl font-bold text-white">{top.ai.label}</span>
-              <span className="text-[8px] mono px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 font-bold">
+              <span className="text-[13px] mono px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 font-bold">
                 MEJOR OPCIÓN
               </span>
             </div>
@@ -406,7 +406,7 @@ function AIRecommendStep({
           </div>
           <div className="shrink-0 text-center">
             <div className="text-3xl font-bold mono text-cyan-400">{top.score}%</div>
-            <div className="text-[9px] text-zinc-600 uppercase tracking-wider">match</div>
+            <div className="text-[13px] text-zinc-600 uppercase tracking-wider">match</div>
           </div>
         </div>
         <div className="h-1.5 rounded-full bg-white/[0.05] overflow-hidden mb-4">
@@ -418,7 +418,7 @@ function AIRecommendStep({
         {top.reasons.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-5">
             {top.reasons.map(r => (
-              <span key={r} className="text-[10px] px-2 py-1 rounded-lg bg-white/[0.04] border border-white/[0.07] text-zinc-400">
+              <span key={r} className="text-[13px] px-2 py-1 rounded-lg bg-white/[0.04] border border-white/[0.07] text-zinc-400">
                 ✓ {r}
               </span>
             ))}
@@ -439,23 +439,23 @@ function AIRecommendStep({
         </button>
       ) : (
         <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} className="space-y-2">
-          <div className="text-[9px] mono text-zinc-600 uppercase tracking-widest mb-3">Otras opciones</div>
+          <div className="text-[13px] mono text-zinc-600 uppercase tracking-widest mb-3">Otras opciones</div>
           {rest.map((rec, i) => (
             <motion.button key={rec.ai.id} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.06 }} onClick={() => onSelect(rec.ai)}
               className="w-full text-left p-4 rounded-xl border border-white/[0.07] bg-white/[0.02] hover:border-white/[0.14] hover:bg-white/[0.04] transition-all group"
             >
               <div className="flex items-center gap-4">
-                <div className="shrink-0 w-6 h-6 rounded-md bg-white/[0.04] border border-white/[0.06] flex items-center justify-center text-[10px] mono text-zinc-600 font-bold">
+                <div className="shrink-0 w-6 h-6 rounded-md bg-white/[0.04] border border-white/[0.06] flex items-center justify-center text-[13px] mono text-zinc-600 font-bold">
                   {i + 2}
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="text-sm font-bold text-zinc-300 group-hover:text-white transition-colors">{rec.ai.label}</div>
-                  <div className="text-[11px] text-zinc-600 mt-0.5">{rec.ai.description}</div>
+                  <div className="text-[14px] text-zinc-600 mt-0.5">{rec.ai.description}</div>
                   {rec.reasons.length > 0 && (
                     <div className="flex flex-wrap gap-1 mt-1.5">
                       {rec.reasons.map(r => (
-                        <span key={r} className="text-[9px] text-zinc-700 px-1.5 py-0.5 rounded bg-white/[0.02] border border-white/[0.04]">{r}</span>
+                        <span key={r} className="text-[13px] text-zinc-700 px-1.5 py-0.5 rounded bg-white/[0.02] border border-white/[0.04]">{r}</span>
                       ))}
                     </div>
                   )}
@@ -483,8 +483,8 @@ function PrecisionSlider({ label, value, onChange }: { label: string; value: num
   return (
     <div>
       <div className="flex justify-between items-center mb-1">
-        <span className="text-[10px] text-zinc-500">{label}</span>
-        <span className="text-[10px] mono text-indigo-400 font-bold">{value}%</span>
+        <span className="text-[13px] text-zinc-500">{label}</span>
+        <span className="text-[13px] mono text-indigo-400 font-bold">{value}%</span>
       </div>
       <input type="range" min={0} max={100} value={value}
         onChange={e => onChange(Number(e.target.value))}
@@ -670,6 +670,16 @@ export default function PromptLabPage() {
 
   // ── Helpers ──────────────────────────────────────────────────────────────────
   const stepIdx     = STEP_ORDER.indexOf(step);
+  // La tira de doce pasos no cabe entera: se mantiene visible el paso en curso
+  // en lugar de encoger la letra para que quepa el andamiaje.
+  const railRef = useRef<HTMLDivElement>(null);
+  const activeChipRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const chip = activeChipRef.current;
+    if (!chip || !railRef.current) return;
+    chip.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  }, [step]);
+
   // ── Render ───────────────────────────────────────────────────────────────────
   return (
     <div className="flex flex-col min-h-[calc(100vh-3.5rem)] bg-[#04060c]">
@@ -677,7 +687,7 @@ export default function PromptLabPage() {
       {/* ── Progress breadcrumb ──────────────────────────────────────────────── */}
       <div className="shrink-0 border-b border-white/[0.05] bg-[#04060c]/80 backdrop-blur-sm">
         <div className="flex items-center justify-between px-4 lg:px-6 h-11">
-          <div className="w-20">
+          <div className="w-20 shrink-0">
             {['objetivo','area','audiencia','cognitivo','procesal','profundidad','formato',
               'capas','documentos','contexto','recomendacion'].includes(step) && (
               <button onClick={goBack}
@@ -688,17 +698,22 @@ export default function PromptLabPage() {
             )}
           </div>
 
-          <div className="hidden sm:flex items-center gap-0.5">
+          <div ref={railRef}
+            className="hidden sm:flex min-w-0 flex-1 items-center justify-start overflow-x-auto px-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {BREADCRUMB.map((bc, bi) => {
               const done   = stepIdx > bi;
               const active = stepIdx === bi;
               return (
-                <div key={bc.key} className="flex items-center gap-0.5">
-                  <div className={`flex items-center gap-1 px-1.5 py-0.5 rounded-md transition-all duration-300 ${
+                <div
+                  key={bc.key}
+                  ref={active ? activeChipRef : undefined}
+                  className="flex shrink-0 items-center gap-0.5"
+                >
+                  <div className={`flex items-center gap-1 whitespace-nowrap px-1.5 py-0.5 rounded-md transition-all duration-300 ${
                     active ? 'bg-cyan-500/15 text-cyan-400' : done ? 'text-zinc-500' : 'text-zinc-700'
                   }`}>
                     {done && <Check className="w-2 h-2 text-emerald-500" />}
-                    <span className="text-[7px] mono font-bold tracking-widest">{bc.label}</span>
+                    <span className="text-[13px] mono font-bold tracking-widest">{bc.label}</span>
                   </div>
                   {bi < BREADCRUMB.length - 1 && (
                     <div className={`w-1.5 h-px ${done ? 'bg-emerald-500/40' : 'bg-white/[0.05]'}`} />
@@ -708,11 +723,11 @@ export default function PromptLabPage() {
             })}
           </div>
 
-          <div className="sm:hidden text-[10px] mono text-zinc-600">
+          <div className="sm:hidden text-[13px] mono text-zinc-600">
             {stepIdx < 13 ? `${stepIdx + 1}/13` : '✓'}
           </div>
 
-          <div className="w-20 flex justify-end">
+          <div className="w-20 shrink-0 flex justify-end">
             {step === 'resultado' && (
               <button onClick={reset}
                 className="flex items-center gap-1 text-xs text-zinc-600 hover:text-zinc-400 transition-colors"
@@ -825,14 +840,14 @@ export default function PromptLabPage() {
                 className="p-6 lg:p-10 max-w-3xl"
               >
                 <div className="mb-2">
-                  <span className="text-[9px] mono font-bold text-purple-400/60 uppercase tracking-widest">Paso 6 de 12</span>
+                  <span className="text-[13px] mono font-bold text-purple-400/60 uppercase tracking-widest">Paso 6 de 12</span>
                 </div>
                 <h1 className="text-3xl lg:text-4xl font-bold text-white mb-2 leading-tight">Contexto procesal</h1>
                 <p className="text-zinc-500 text-sm mb-8">Etapa del proceso, jurisdicción y tolerancia al riesgo</p>
 
                 {/* Procedural stage */}
                 <div className="mb-6">
-                  <div className="text-[10px] mono font-bold text-purple-400 uppercase tracking-widest mb-3">
+                  <div className="text-[13px] mono font-bold text-purple-400 uppercase tracking-widest mb-3">
                     Etapa procesal
                   </div>
                   <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
@@ -848,7 +863,7 @@ export default function PromptLabPage() {
                         }`}
                       >
                         <div className="text-base mb-1">{ps.emoji}</div>
-                        <div className="font-bold text-[11px] leading-tight">{ps.label}</div>
+                        <div className="font-bold text-[14px] leading-tight">{ps.label}</div>
                       </motion.button>
                     ))}
                   </div>
@@ -856,7 +871,7 @@ export default function PromptLabPage() {
 
                 {/* Jurisdiction */}
                 <div className="mb-6">
-                  <div className="text-[10px] mono font-bold text-purple-400 uppercase tracking-widest mb-3">
+                  <div className="text-[13px] mono font-bold text-purple-400 uppercase tracking-widest mb-3">
                     Jurisdicción
                   </div>
                   <div className="flex flex-wrap gap-2">
@@ -877,7 +892,7 @@ export default function PromptLabPage() {
 
                 {/* Risk tolerance */}
                 <div className="mb-8">
-                  <div className="text-[10px] mono font-bold text-purple-400 uppercase tracking-widest mb-3">
+                  <div className="text-[13px] mono font-bold text-purple-400 uppercase tracking-widest mb-3">
                     Tolerancia al riesgo
                   </div>
                   <div className="grid grid-cols-3 gap-3">
@@ -894,7 +909,7 @@ export default function PromptLabPage() {
                       >
                         <div className="text-lg mb-1">{rt.emoji}</div>
                         <div className={`font-bold text-sm ${sel.riesgo?.id === rt.id ? 'text-purple-400' : 'text-zinc-300'}`}>{rt.label}</div>
-                        <div className="text-[10px] text-zinc-600 mt-0.5">{rt.description}</div>
+                        <div className="text-[13px] text-zinc-600 mt-0.5">{rt.description}</div>
                       </motion.button>
                     ))}
                   </div>
@@ -954,7 +969,7 @@ export default function PromptLabPage() {
                 className="p-6 lg:p-10 max-w-3xl"
               >
                 <div className="mb-2">
-                  <span className="text-[9px] mono font-bold text-purple-400/60 uppercase tracking-widest">Paso 9 de 12</span>
+                  <span className="text-[13px] mono font-bold text-purple-400/60 uppercase tracking-widest">Paso 9 de 12</span>
                 </div>
                 <h1 className="text-3xl lg:text-4xl font-bold text-white mb-2 leading-tight">Capas de seguridad</h1>
                 <p className="text-zinc-500 text-sm mb-1">Protecciones cognitivas del prompt</p>
@@ -976,7 +991,7 @@ export default function PromptLabPage() {
                           <span className="text-lg shrink-0">{e.emoji}</span>
                           <div className="flex-1 min-w-0">
                             <div className={`text-sm font-bold ${on ? 'text-emerald-400' : 'text-zinc-300'}`}>{e.label}</div>
-                            <div className="text-[11px] text-zinc-600 mt-0.5">{e.description}</div>
+                            <div className="text-[14px] text-zinc-600 mt-0.5">{e.description}</div>
                           </div>
                           <div className={`w-4 h-4 rounded-full border-2 shrink-0 flex items-center justify-center transition-all ${
                             on ? 'bg-emerald-500 border-emerald-500' : 'border-zinc-700'
@@ -1033,7 +1048,7 @@ export default function PromptLabPage() {
                 className="p-6 lg:p-10 max-w-3xl"
               >
                 <div className="mb-2">
-                  <span className="text-[9px] mono font-bold text-indigo-400/60 uppercase tracking-widest">Paso 11 de 12</span>
+                  <span className="text-[13px] mono font-bold text-indigo-400/60 uppercase tracking-widest">Paso 11 de 12</span>
                 </div>
                 <h1 className="text-3xl lg:text-4xl font-bold text-white mb-2 leading-tight">Contexto y precisión</h1>
                 <p className="text-zinc-500 text-sm mb-1">Describe tu caso y calibra los parámetros cognitivos</p>
@@ -1052,7 +1067,7 @@ export default function PromptLabPage() {
                 >
                   <Zap className="w-3 h-3" />
                   {showPrecision ? 'Ocultar' : 'Configurar'} precision dials (avanzado)
-                  <span className="text-[9px] mono text-indigo-500/60">
+                  <span className="text-[13px] mono text-indigo-500/60">
                     {showPrecision ? '▲' : '▼'}
                   </span>
                 </button>
@@ -1063,7 +1078,7 @@ export default function PromptLabPage() {
                       exit={{ opacity: 0, height: 0 }} className="overflow-hidden"
                     >
                       <div className="rounded-xl border border-indigo-500/20 bg-indigo-500/[0.04] p-5 space-y-4 mb-4">
-                        <div className="text-[9px] mono font-bold text-indigo-400 uppercase tracking-widest mb-1">
+                        <div className="text-[13px] mono font-bold text-indigo-400 uppercase tracking-widest mb-1">
                           Precision dials — Calibración cognitiva
                         </div>
                         <PrecisionSlider label="Profundidad analítica"
@@ -1082,7 +1097,7 @@ export default function PromptLabPage() {
                           value={sel.precision.verification_strictness}
                           onChange={v => setPrecision('verification_strictness', v)} />
                         <button onClick={() => setSel(prev => ({ ...prev, precision: DEFAULT_PRECISION }))}
-                          className="text-[10px] text-zinc-600 hover:text-zinc-400 transition-colors"
+                          className="text-[13px] text-zinc-600 hover:text-zinc-400 transition-colors"
                         >
                           Restaurar valores por defecto
                         </button>
@@ -1117,7 +1132,7 @@ export default function PromptLabPage() {
                   >
                     <div className="inline-flex items-center gap-2 mb-4">
                       <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                      <span className="text-[10px] mono font-bold text-cyan-400 uppercase tracking-widest">EVA Cognitive Runtime v3.0</span>
+                      <span className="text-[13px] mono font-bold text-cyan-400 uppercase tracking-widest">EVA Cognitive Runtime v3.0</span>
                       <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
                     </div>
                     <h2 className="text-2xl font-bold text-white">Compilando prompt cognitivo...</h2>
@@ -1131,7 +1146,7 @@ export default function PromptLabPage() {
                       <div className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
                       <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
                       <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/70" />
-                      <span className="text-[9px] text-zinc-600 ml-2">lexiprompt-runtime — compile</span>
+                      <span className="text-[13px] text-zinc-600 ml-2">lexiprompt-runtime — compile</span>
                     </div>
                     {GEN_PHASES.map((phase, i) => (
                       <AnimatePresence key={phase}>
@@ -1164,8 +1179,8 @@ export default function PromptLabPage() {
                       { k: 'MODELO',   v: sel.modelo?.label },
                     ].map(r => (
                       <div key={r.k} className="bg-white/[0.02] rounded-lg p-2.5 border border-white/[0.04]">
-                        <div className="text-[8px] mono text-zinc-600 uppercase tracking-wider">{r.k}</div>
-                        <div className="text-[10px] text-zinc-300 font-medium mt-0.5 truncate">{r.v}</div>
+                        <div className="text-[13px] mono text-zinc-600 uppercase tracking-wider">{r.k}</div>
+                        <div className="text-[13px] text-zinc-300 font-medium mt-0.5 truncate">{r.v}</div>
                       </div>
                     ))}
                   </div>
@@ -1185,7 +1200,7 @@ export default function PromptLabPage() {
                     <div>
                       <div className="flex items-center gap-2 mb-1">
                         <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                        <span className="text-[9px] mono font-bold text-emerald-400 uppercase tracking-widest">Prompt compilado</span>
+                        <span className="text-[13px] mono font-bold text-emerald-400 uppercase tracking-widest">Prompt compilado</span>
                       </div>
                       <h2 className="text-xl font-bold text-white">Cognitive Runtime Output</h2>
                     </div>
@@ -1246,11 +1261,11 @@ export default function PromptLabPage() {
                         <div className="flex items-center justify-between px-4 py-2.5 border-b border-white/[0.05] bg-cyan-500/[0.04]">
                           <div className="flex items-center gap-2">
                             <div className="w-2 h-2 rounded-full bg-cyan-500/70" />
-                            <span className="text-[9px] mono text-cyan-400">
+                            <span className="text-[13px] mono text-cyan-400">
                               prompt-{sel.modelo?.id ?? 'compiled'}.{sel.modelo?.id === 'claude' ? 'xml' : 'txt'} — model-specific compilation
                             </span>
                           </div>
-                          <button onClick={downloadCompiled} className="text-[9px] mono text-cyan-500 hover:text-cyan-300 transition-colors">
+                          <button onClick={downloadCompiled} className="text-[13px] mono text-cyan-500 hover:text-cyan-300 transition-colors">
                             ↓ {sel.modelo?.id === 'claude' ? 'XML' : 'TXT'}
                           </button>
                         </div>
@@ -1268,7 +1283,7 @@ export default function PromptLabPage() {
                           <div className="w-2 h-2 rounded-full bg-red-500/50" />
                           <div className="w-2 h-2 rounded-full bg-yellow-500/50" />
                           <div className="w-2 h-2 rounded-full bg-emerald-500/50" />
-                          <span className="text-[9px] mono text-zinc-600 ml-2">prompt-juridico.txt</span>
+                          <span className="text-[13px] mono text-zinc-600 ml-2">prompt-juridico.txt</span>
                         </div>
                         <div className="p-4 overflow-x-auto">
                           <pre className="text-xs text-zinc-400 leading-relaxed whitespace-pre-wrap font-mono">{promptResult}</pre>
@@ -1283,9 +1298,9 @@ export default function PromptLabPage() {
                         <div className="flex items-center justify-between px-4 py-2.5 border-b border-white/[0.05] bg-indigo-500/[0.04]">
                           <div className="flex items-center gap-2">
                             <div className="w-2 h-2 rounded-full bg-indigo-500/70" />
-                            <span className="text-[9px] mono text-indigo-400">prompt-ir-v3.yaml — intermediate representation</span>
+                            <span className="text-[13px] mono text-indigo-400">prompt-ir-v3.yaml — intermediate representation</span>
                           </div>
-                          <button onClick={downloadIR} className="text-[9px] mono text-indigo-500 hover:text-indigo-300 transition-colors">
+                          <button onClick={downloadIR} className="text-[13px] mono text-indigo-500 hover:text-indigo-300 transition-colors">
                             ↓ YAML
                           </button>
                         </div>
@@ -1309,7 +1324,7 @@ export default function PromptLabPage() {
                 <div className="flex flex-col gap-4">
                   {/* DNA summary */}
                   <div className="rounded-xl border border-white/[0.06] bg-[#070b12] p-4">
-                    <div className="text-[9px] mono font-bold text-cyan-400 uppercase tracking-widest mb-3">Cognitive DNA</div>
+                    <div className="text-[13px] mono font-bold text-cyan-400 uppercase tracking-widest mb-3">Cognitive DNA</div>
                     <div className="space-y-2.5">
                       {[
                         { k: 'OBJETIVO',    v: sel.objetivo?.label,    icon: sel.objetivo?.emoji },
@@ -1322,8 +1337,8 @@ export default function PromptLabPage() {
                         { k: 'MODELO',      v: sel.modelo?.label },
                       ].map(r => r.v && (
                         <div key={r.k}>
-                          <div className="text-[8px] mono text-zinc-600 uppercase tracking-wider">{r.k}</div>
-                          <div className="text-[11px] text-zinc-300 font-medium mt-0.5">
+                          <div className="text-[13px] mono text-zinc-600 uppercase tracking-wider">{r.k}</div>
+                          <div className="text-[14px] text-zinc-300 font-medium mt-0.5">
                             {r.icon && <span className="mr-1">{r.icon}</span>}{r.v}
                           </div>
                         </div>
@@ -1333,14 +1348,14 @@ export default function PromptLabPage() {
 
                   {/* Security layers */}
                   <div className="rounded-xl border border-white/[0.06] bg-[#070b12] p-4">
-                    <div className="text-[9px] mono font-bold text-emerald-400 uppercase tracking-widest mb-3">Capas activas</div>
+                    <div className="text-[13px] mono font-bold text-emerald-400 uppercase tracking-widest mb-3">Capas activas</div>
                     {(sel.capas.length > 0 ? sel.capas : ['antihallu', 'sources']).map(id => {
                       const e = enhancements.find(x => x.id === id);
                       if (!e) return null;
                       return (
                         <div key={id} className="flex items-center gap-2 py-1.5 border-b border-white/[0.04] last:border-0">
                           <Check className="w-3 h-3 text-emerald-400 shrink-0" />
-                          <span className="text-[10px] text-zinc-400">{e.emoji} {e.label}</span>
+                          <span className="text-[13px] text-zinc-400">{e.emoji} {e.label}</span>
                         </div>
                       );
                     })}
@@ -1348,7 +1363,7 @@ export default function PromptLabPage() {
 
                   {/* Platform exports */}
                   <div className="rounded-xl border border-white/[0.06] bg-[#070b12] p-4">
-                    <div className="text-[9px] mono font-bold text-indigo-400 uppercase tracking-widest mb-3">Exportar para plataforma</div>
+                    <div className="text-[13px] mono font-bold text-indigo-400 uppercase tracking-widest mb-3">Exportar para plataforma</div>
                     <div className="space-y-2">
                       {[
                         { label: 'System Prompt',    fn: downloadSys,    tip: 'Para cualquier IA' },
@@ -1358,9 +1373,9 @@ export default function PromptLabPage() {
                         <button key={ex.label} onClick={ex.fn}
                           className="w-full flex items-center justify-between px-3 py-2 rounded-lg border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] transition-all group"
                         >
-                          <span className="text-[10px] text-zinc-400 group-hover:text-zinc-200 transition-colors font-medium">{ex.label}</span>
+                          <span className="text-[13px] text-zinc-400 group-hover:text-zinc-200 transition-colors font-medium">{ex.label}</span>
                           <div className="flex items-center gap-1.5">
-                            <span className="text-[9px] text-zinc-700">{ex.tip}</span>
+                            <span className="text-[13px] text-zinc-700">{ex.tip}</span>
                             <Download className="w-3 h-3 text-zinc-600 group-hover:text-zinc-400 transition-colors" />
                           </div>
                         </button>
@@ -1371,10 +1386,10 @@ export default function PromptLabPage() {
                   {/* Optimization tip */}
                   {sel.modelo?.optimizationTip && (
                     <div className="rounded-xl border border-indigo-500/20 bg-indigo-500/[0.04] p-4">
-                      <div className="text-[9px] mono font-bold text-indigo-400 uppercase tracking-widest mb-2">
+                      <div className="text-[13px] mono font-bold text-indigo-400 uppercase tracking-widest mb-2">
                         Tip para {sel.modelo.label}
                       </div>
-                      <p className="text-[10px] text-zinc-500 leading-relaxed">
+                      <p className="text-[13px] text-zinc-500 leading-relaxed">
                         {sel.modelo.optimizationTip.slice(0, 220)}...
                       </p>
                     </div>

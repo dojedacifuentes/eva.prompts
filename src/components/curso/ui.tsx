@@ -171,7 +171,7 @@ export function ChipRadio({
                 <span className="block text-sm font-medium leading-snug">
                   {o.label}
                   {o.badge && (
-                    <span className="mono ml-2 rounded border border-cyan-500/35 bg-cyan-500/10 px-1.5 py-0.5 align-middle text-[9px] font-bold uppercase tracking-wider text-cyan-300">
+                    <span className="mono ml-2 rounded border border-cyan-500/35 bg-cyan-500/10 px-1.5 py-0.5 align-middle text-[13px] font-bold uppercase tracking-wider text-cyan-300">
                       {o.badge}
                     </span>
                   )}
@@ -217,7 +217,7 @@ export function ChipToggles({
             >
               <span
                 aria-hidden
-                className={`mono flex h-4 w-4 shrink-0 items-center justify-center rounded border text-[10px] font-bold ${
+                className={`mono flex h-4 w-4 shrink-0 items-center justify-center rounded border text-[13px] font-bold ${
                   on ? 'border-cyan-400/60 bg-cyan-500/25 text-cyan-200' : 'border-white/20 text-transparent'
                 }`}
               >
@@ -290,7 +290,7 @@ export function Field({
         onChange={e => onChange(e.target.value)}
         placeholder={placeholder}
         className={`w-full resize-y rounded-xl border border-white/[0.12] bg-[oklch(0.09_0.016_250)] px-3.5 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-600 focus:border-cyan-500/50 focus:outline-2 focus:outline-offset-0 focus:outline-cyan-500/40 ${
-          mono ? 'mono text-[12.5px] leading-relaxed' : ''
+          mono ? 'mono text-[15px] leading-relaxed' : ''
         }`}
       />
     </div>
@@ -306,10 +306,10 @@ export function PromptBlock({
   return (
     <div className="overflow-hidden rounded-xl border border-white/[0.12]">
       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/[0.08] bg-white/[0.03] px-3.5 py-2.5">
-        <span className="mono text-[10px] font-bold uppercase tracking-[0.16em] text-cyan-400">{label}</span>
+        <span className="mono text-[13px] font-bold uppercase tracking-[0.16em] text-cyan-400">{label}</span>
         {actions && <div className="flex flex-wrap gap-2">{actions}</div>}
       </div>
-      <pre className="mono max-h-[26rem] overflow-y-auto whitespace-pre-wrap break-words bg-[oklch(0.06_0.014_250)] px-3.5 py-3.5 text-[12.5px] leading-relaxed text-zinc-300">
+      <pre className="mono max-h-[26rem] overflow-y-auto whitespace-pre-wrap break-words bg-[oklch(0.06_0.014_250)] px-3.5 py-3.5 text-[15px] leading-relaxed text-zinc-300">
         {text}
       </pre>
       {note && (
@@ -331,7 +331,7 @@ export function Brief({ children }: { children: ReactNode }) {
 export function StepHeading({ n, children }: { n: number | string; children: ReactNode }) {
   return (
     <h2 className="flex items-center gap-2.5 text-base font-semibold text-white">
-      <span className="mono flex h-6 w-6 shrink-0 items-center justify-center rounded border border-cyan-500/30 bg-cyan-500/10 text-[11px] font-bold text-cyan-400">
+      <span className="mono flex h-6 w-6 shrink-0 items-center justify-center rounded border border-cyan-500/30 bg-cyan-500/10 text-[14px] font-bold text-cyan-400">
         {n}
       </span>
       {children}

@@ -27,7 +27,7 @@ export default function GuiaPage() {
           hay publicado es el plan, y cada capítulo lleva su estado real.
         </p>
 
-        <div className="mono mt-4 flex flex-wrap gap-x-4 gap-y-1 text-[11px] uppercase tracking-widest text-zinc-600">
+        <div className="mono mt-4 flex flex-wrap gap-x-4 gap-y-1 text-[14px] uppercase tracking-widest text-zinc-600">
           <span>
             <span className="text-emerald-400">{listos}</span> publicados
           </span>
@@ -47,7 +47,7 @@ export default function GuiaPage() {
           <section key={parte.titulo} aria-labelledby={parte.titulo}>
             <h2
               id={parte.titulo}
-              className="mono mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-cyan-400"
+              className="mono mb-3 text-[13px] font-bold uppercase tracking-[0.2em] text-cyan-400"
             >
               {parte.titulo}
             </h2>
@@ -60,26 +60,26 @@ export default function GuiaPage() {
                     <div className="flex items-start gap-3">
                       <span
                         aria-hidden
-                        className="mono mt-0.5 shrink-0 text-[11px] font-bold tabular-nums text-zinc-700"
+                        className="mono mt-0.5 shrink-0 text-[14px] font-bold tabular-nums text-zinc-700"
                       >
                         {c.n}
                       </span>
                       <div className="min-w-0 flex-1">
                         <div className="flex flex-wrap items-center gap-2">
-                          <h3 className="text-[15px] font-bold leading-tight text-zinc-200">
+                          <h3 className="text-[17px] font-bold leading-tight text-zinc-200">
                             {c.titulo}
                           </h3>
                           <span
-                            className={`mono shrink-0 rounded-full border px-2 py-0.5 text-[9px] font-bold uppercase tracking-widest ${etiqueta.clase}`}
+                            className={`mono shrink-0 rounded-full border px-2 py-0.5 text-[13px] font-bold uppercase tracking-widest ${etiqueta.clase}`}
                           >
                             {etiqueta.label}
                           </span>
                         </div>
-                        <p className="mt-1 text-[13px] leading-relaxed text-zinc-500">{c.resumen}</p>
+                        <p className="mt-1 text-[15px] leading-relaxed text-zinc-500">{c.resumen}</p>
                         {c.mientrasTanto && !c.href && (
                           <Link
                             href={c.mientrasTanto.href}
-                            className="mt-2 inline-flex items-center gap-1.5 text-[12px] font-medium text-cyan-400 transition-colors hover:text-cyan-300"
+                            className="mt-2 inline-flex items-center gap-1.5 text-[15px] font-medium text-cyan-400 transition-colors hover:text-cyan-300"
                           >
                             {c.mientrasTanto.label}
                             <ArrowRight className="h-3 w-3 shrink-0" aria-hidden />

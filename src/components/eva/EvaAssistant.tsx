@@ -22,11 +22,11 @@ function Pregunta({ item, index }: { item: EvaPregunta; index: number }) {
       >
         <span
           aria-hidden
-          className="mono mt-[3px] shrink-0 text-[10px] font-bold tabular-nums text-cyan-400/45"
+          className="mono mt-[3px] shrink-0 text-[13px] font-bold tabular-nums text-cyan-400/45"
         >
           {String(index + 1).padStart(2, '0')}
         </span>
-        <span className="min-w-0 flex-1 text-[13px] font-medium leading-snug text-zinc-300 transition-colors group-hover:text-zinc-100">
+        <span className="min-w-0 flex-1 text-[15px] font-medium leading-snug text-zinc-300 transition-colors group-hover:text-zinc-100">
           {item.q}
         </span>
         <ChevronDown
@@ -54,7 +54,7 @@ function Pregunta({ item, index }: { item: EvaPregunta; index: number }) {
               </span>
               <div className="min-w-0 space-y-2.5">
                 {item.a.split('\n\n').map((p, i) => (
-                  <p key={i} className="text-[13px] leading-relaxed text-zinc-400">
+                  <p key={i} className="text-[15px] leading-relaxed text-zinc-400">
                     {p}
                   </p>
                 ))}
@@ -98,24 +98,24 @@ export function EvaAssistant({
 
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
-            <span className="mono text-[10px] font-bold uppercase tracking-[0.2em] text-cyan-400">
+            <span className="mono text-[13px] font-bold uppercase tracking-[0.2em] text-cyan-400">
               {EVA.nombre}
             </span>
-            <span className="mono text-[9px] uppercase tracking-widest text-zinc-600">
+            <span className="mono text-[13px] uppercase tracking-widest text-zinc-600">
               {EVA.rol}
             </span>
           </div>
 
-          <p className="mt-1.5 text-[13px] leading-relaxed text-zinc-300">{guion.intro}</p>
+          <p className="mt-1.5 text-[15px] leading-relaxed text-zinc-300">{guion.intro}</p>
           {guion.matiz && (
-            <p className="mt-1 text-[12px] leading-relaxed text-zinc-500">{guion.matiz}</p>
+            <p className="mt-1 text-[15px] leading-relaxed text-zinc-500">{guion.matiz}</p>
           )}
 
           <button
             type="button"
             onClick={() => setAbierto(v => !v)}
             aria-expanded={abierto}
-            className="mono mt-3 inline-flex items-center gap-1.5 rounded-lg border border-cyan-500/25 bg-cyan-500/[0.06] px-2.5 py-1.5 text-[10px] font-bold uppercase tracking-widest text-cyan-400 transition-colors hover:border-cyan-500/45 hover:bg-cyan-500/[0.12]"
+            className="mono mt-3 inline-flex items-center gap-1.5 rounded-lg border border-cyan-500/25 bg-cyan-500/[0.06] px-2.5 py-1.5 text-[13px] font-bold uppercase tracking-widest text-cyan-400 transition-colors hover:border-cyan-500/45 hover:bg-cyan-500/[0.12]"
           >
             {abierto ? 'Cerrar' : `${guion.preguntas.length} preguntas`}
             <ChevronDown
@@ -142,7 +142,7 @@ export function EvaAssistant({
                   <Pregunta key={item.q} item={item} index={i} />
                 ))}
               </ul>
-              <p className="border-t border-white/[0.06] py-3 text-[10px] leading-relaxed text-zinc-600">
+              <p className="border-t border-white/[0.06] py-3 text-[13px] leading-relaxed text-zinc-600">
                 {EVA.limite}
               </p>
             </div>

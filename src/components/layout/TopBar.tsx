@@ -20,18 +20,18 @@ export function TopBar() {
           </Link>
           <div className="min-w-0">
             <div className="truncate text-sm font-semibold leading-tight text-white">{titulo}</div>
-            <div className="hidden truncate text-[11px] leading-tight text-zinc-500 sm:block">
+            <div className="hidden truncate text-[14px] leading-tight text-zinc-500 sm:block">
               {subtitulo}
             </div>
           </div>
         </div>
 
         {sec?.enConstruccion ? (
-          <span className="mono shrink-0 rounded-full border border-amber-500/25 bg-amber-500/5 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-amber-400">
+          <span className="mono shrink-0 rounded-full border border-amber-500/25 bg-amber-500/5 px-3 py-1.5 text-[13px] font-bold uppercase tracking-widest text-amber-400">
             En construcción
           </span>
         ) : (
-          <span className="mono hidden shrink-0 rounded-full border border-cyan-500/20 bg-cyan-500/5 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-cyan-400 sm:block">
+          <span className="mono hidden shrink-0 rounded-full border border-cyan-500/20 bg-cyan-500/5 px-3 py-1.5 text-[13px] font-bold uppercase tracking-widest text-cyan-400 sm:block">
             {SITIO.partes.uno} {SITIO.partes.dos}
           </span>
         )}

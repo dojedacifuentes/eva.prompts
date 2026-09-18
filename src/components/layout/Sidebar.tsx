@@ -10,7 +10,7 @@ function Grupo({ title, items, pathname }: { title: string; items: Seccion[]; pa
   if (items.length === 0) return null;
   return (
     <>
-      <div className="mono px-3 pt-5 pb-1.5 text-[9px] font-bold uppercase tracking-[0.18em] text-zinc-700 first:pt-0">
+      <div className="mono px-3 pt-5 pb-1.5 text-[13px] font-bold uppercase tracking-[0.18em] text-zinc-700 first:pt-0">
         {title}
       </div>
       {items.map(({ href, icon: Icon, label, enConstruccion }) => {
@@ -65,7 +65,7 @@ export function Sidebar() {
           <div className="mono text-xs font-bold uppercase tracking-[0.2em] text-cyan-400">
             {SITIO.partes.uno} <span className="text-zinc-500">{SITIO.partes.dos}</span>
           </div>
-          <div className="truncate text-[10px] leading-tight text-zinc-500">
+          <div className="truncate text-[13px] leading-tight text-zinc-500">
             Prompting jurídico
           </div>
         </div>
@@ -83,8 +83,8 @@ export function Sidebar() {
       </nav>
 
       <div className="space-y-1.5 border-t border-white/[0.06] px-4 py-4">
-        <p className="text-[10px] leading-snug text-zinc-600">{SITIO.tesis}</p>
-        <div className="mono text-[10px] uppercase tracking-widest text-zinc-700">
+        <p className="text-[13px] leading-snug text-zinc-600">{SITIO.tesis}</p>
+        <div className="mono text-[13px] uppercase tracking-widest text-zinc-700">
           {AUTOR.credito}
         </div>
       </div>

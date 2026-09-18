@@ -85,14 +85,14 @@ export function Cierre() {
             <h2 id="comparacion" className="text-lg font-bold text-white">Antes y ahora</h2>
             <div className="grid gap-3 sm:grid-cols-2">
               <div className="rounded-2xl border border-white/[0.10] bg-white/[0.02] p-4">
-                <div className="mono text-[10px] font-bold uppercase tracking-[0.16em] text-zinc-500">
+                <div className="mono text-[13px] font-bold uppercase tracking-[0.16em] text-zinc-500">
                   Al comenzar
                 </div>
                 <p className="mt-2 text-base font-semibold text-zinc-300">{labelOf(before.blame)}</p>
                 <p className="mt-1 text-xs text-zinc-500">Confianza · {before.confidence ?? '—'}</p>
               </div>
               <div className="rounded-2xl border border-cyan-500/35 bg-cyan-500/[0.07] p-4">
-                <div className="mono text-[10px] font-bold uppercase tracking-[0.16em] text-cyan-400">
+                <div className="mono text-[13px] font-bold uppercase tracking-[0.16em] text-cyan-400">
                   Ahora
                 </div>
                 <p className="mt-2 text-base font-semibold text-white">{labelOf(now.blame)}</p>

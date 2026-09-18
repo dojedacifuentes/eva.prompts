@@ -31,7 +31,7 @@ export function MobileNav() {
                   )}
                   <Icon aria-hidden className="relative z-10 h-5 w-5" />
                 </span>
-                <span className="w-full truncate text-center text-[9px] font-medium leading-none">
+                <span className="w-full truncate text-center text-[13px] font-medium leading-none">
                   {corta}
                 </span>
               </motion.div>

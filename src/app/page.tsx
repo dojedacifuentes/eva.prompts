@@ -25,7 +25,7 @@ export default function InicioPage() {
       <section className="relative">
         <div className="flex items-center gap-3">
           <EvaMark size={34} />
-          <span className="mono text-[10px] font-bold uppercase tracking-[0.28em] text-zinc-500">
+          <span className="mono text-[13px] font-bold uppercase tracking-[0.28em] text-zinc-500">
             {SITIO.subtitulo}
           </span>
         </div>
@@ -79,15 +79,15 @@ export default function InicioPage() {
               className="relative rounded-2xl border border-white/[0.08] bg-[oklch(0.10_0.018_250/0.55)] p-5"
             >
               <div className="flex items-baseline gap-2">
-                <span className={`mono text-[10px] font-bold uppercase tracking-[0.2em] ${acentoTexto[t.accent]}`}>
+                <span className={`mono text-[13px] font-bold uppercase tracking-[0.2em] ${acentoTexto[t.accent]}`}>
                   {t.kicker}
                 </span>
-                <span aria-hidden className="mono text-[10px] text-zinc-700">
+                <span aria-hidden className="mono text-[13px] text-zinc-700">
                   {String(i + 1).padStart(2, '0')}
                 </span>
               </div>
               <h3 className="mt-2 text-xl font-bold leading-tight text-white">{t.titulo}</h3>
-              <p className="mt-2.5 text-[13px] leading-relaxed text-zinc-400">{t.cuerpo}</p>
+              <p className="mt-2.5 text-[15px] leading-relaxed text-zinc-400">{t.cuerpo}</p>
             </article>
           ))}
         </div>
@@ -112,7 +112,7 @@ export default function InicioPage() {
 
       {/* ── Los tres pilares ──────────────────────────────────────────────── */}
       <section aria-labelledby="pilares" className="mt-16">
-        <div className="mono text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600">
+        <div className="mono text-[13px] font-bold uppercase tracking-[0.2em] text-zinc-600">
           Lo que cambia cuando el oficio es jurídico
         </div>
         <h2 id="pilares" className="mt-2 text-2xl font-bold text-white sm:text-3xl">
@@ -122,7 +122,7 @@ export default function InicioPage() {
           {PILARES.map(p => (
             <article key={p.id} className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5">
               <h3 className={`text-base font-bold ${acentoTexto[p.accent]}`}>{p.titulo}</h3>
-              <p className="mt-2 text-[13px] leading-relaxed text-zinc-400">{p.cuerpo}</p>
+              <p className="mt-2 text-[15px] leading-relaxed text-zinc-400">{p.cuerpo}</p>
             </article>
           ))}
         </div>
@@ -130,7 +130,7 @@ export default function InicioPage() {
 
       {/* ── Mapa del laboratorio ──────────────────────────────────────────── */}
       <section aria-labelledby="secciones" className="mt-16">
-        <div className="mono text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600">
+        <div className="mono text-[13px] font-bold uppercase tracking-[0.2em] text-zinc-600">
           Qué hay aquí
         </div>
         <h2 id="secciones" className="mt-2 text-2xl font-bold text-white sm:text-3xl">
@@ -153,12 +153,12 @@ export default function InicioPage() {
                   <div className="flex flex-wrap items-center gap-2">
                     <h3 className="text-base font-bold text-white">{s.titulo}</h3>
                     {s.enConstruccion && (
-                      <span className="mono rounded-full border border-amber-500/25 bg-amber-500/5 px-2 py-0.5 text-[9px] font-bold uppercase tracking-widest text-amber-400">
+                      <span className="mono rounded-full border border-amber-500/25 bg-amber-500/5 px-2 py-0.5 text-[13px] font-bold uppercase tracking-widest text-amber-400">
                         En obra
                       </span>
                     )}
                   </div>
-                  <p className="mt-1 text-[13px] leading-relaxed text-zinc-500">{s.subtitulo}</p>
+                  <p className="mt-1 text-[15px] leading-relaxed text-zinc-500">{s.subtitulo}</p>
                 </div>
                 <ArrowRight
                   aria-hidden

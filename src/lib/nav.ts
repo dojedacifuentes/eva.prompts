@@ -14,7 +14,8 @@ export interface Seccion {
   icon: LucideIcon;
   /** Etiqueta en la barra lateral. */
   label: string;
-  /** Etiqueta corta, para la barra inferior en móvil. */
+  /** Etiqueta corta, para la barra inferior en móvil: seis destinos a 390px
+   *  dejan 57px por celda y no toda etiqueta cabe a tamaño legible. */
   corta: string;
   /** Título de la barra superior y de la pestaña del navegador. */
   titulo: string;
@@ -61,7 +62,7 @@ export const SECCIONES: Seccion[] = [
     href: '/guia',
     eva: 'guia',
     icon: BookOpen,
-    label: 'Guía de prompting jurídico',
+    label: 'Guía de prompting',
     corta: 'Guía',
     titulo: 'Guía completa de prompting jurídico',
     subtitulo: 'En construcción · El índice está publicado',
@@ -73,7 +74,7 @@ export const SECCIONES: Seccion[] = [
     eva: 'conceptos',
     icon: Library,
     label: 'Conceptos',
-    corta: 'Conceptos',
+    corta: 'Léxico',
     titulo: 'Conceptos',
     subtitulo: 'Vocabulario de IA aplicada al Derecho · Tarjetas de repaso',
     grupo: 'Consulta',

@@ -15,13 +15,13 @@ export function SiteFooter() {
                 {SITIO.partes.uno} <span className="text-zinc-600">{SITIO.partes.dos}</span>
               </span>
             </div>
-            <p className="mt-3 text-[11px] leading-relaxed text-zinc-500">{SITIO.subtitulo}</p>
-            <p className="mt-2 text-[11px] leading-relaxed text-zinc-600">{EVA.limite}</p>
+            <p className="mt-3 text-[14px] leading-relaxed text-zinc-500">{SITIO.subtitulo}</p>
+            <p className="mt-2 text-[14px] leading-relaxed text-zinc-600">{EVA.limite}</p>
           </div>
 
           {GRUPOS.map(g => (
             <div key={g}>
-              <div className="mono mb-2.5 text-[9px] font-bold uppercase tracking-[0.18em] text-zinc-700">
+              <div className="mono mb-2.5 text-[13px] font-bold uppercase tracking-[0.18em] text-zinc-700">
                 {g}
               </div>
               <ul className="space-y-1.5">
@@ -29,11 +29,11 @@ export function SiteFooter() {
                   <li key={s.href}>
                     <Link
                       href={s.href}
-                      className="text-[12px] text-zinc-500 transition-colors hover:text-cyan-400"
+                      className="text-[15px] text-zinc-500 transition-colors hover:text-cyan-400"
                     >
                       {s.label}
                       {s.enConstruccion && (
-                        <span className="ml-1.5 text-[10px] text-amber-500/70">· en obra</span>
+                        <span className="ml-1.5 text-[13px] text-amber-500/70">· en obra</span>
                       )}
                     </Link>
                   </li>
@@ -44,12 +44,12 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-9 flex flex-col gap-2 border-t border-white/[0.06] pt-5 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-[11px] text-zinc-600">{AUTOR.credito}</p>
+          <p className="text-[14px] text-zinc-600">{AUTOR.credito}</p>
           <a
             href={ENLACES.repositorio}
             target="_blank"
             rel="noopener noreferrer"
-            className="mono text-[10px] uppercase tracking-widest text-zinc-600 transition-colors hover:text-cyan-400"
+            className="mono text-[13px] uppercase tracking-widest text-zinc-600 transition-colors hover:text-cyan-400"
           >
             Código abierto ↗
           </a>

@@ -20,10 +20,10 @@ export function Pregunta() {
   return (
     <>
       <Panel className="border-white/[0.12]">
-        <div className="mono mb-3 text-[10px] font-bold uppercase tracking-[0.16em] text-zinc-500">
+        <div className="mono mb-3 text-[13px] font-bold uppercase tracking-[0.16em] text-zinc-500">
           Ficha bibliográfica citada en un escrito judicial
         </div>
-        <p className="mono text-[13px] leading-relaxed text-zinc-200">
+        <p className="mono text-[15px] leading-relaxed text-zinc-200">
           {fakeCitation.author} ({fakeCitation.year}). <em>{fakeCitation.title}</em>.{' '}
           {fakeCitation.publisher}, {fakeCitation.place}, {fakeCitation.pages}.
         </p>
