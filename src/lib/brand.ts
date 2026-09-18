@@ -7,7 +7,7 @@
 // Reglas de contenido que este archivo respeta a propósito (no las relajes sin
 // material verificable):
 //  - No se afirma qué significa la sigla EVA.
-//  - EVA no tiene biografía, rostro ni apariencia humana declarada.
+//  - EVA no tiene biografía ni credenciales: tiene una función y un retrato.
 //  - No se declaran avales universitarios, credenciales profesionales,
 //    relaciones institucionales, cifras de usuarios ni promesas de resultado.
 // ─────────────────────────────────────────────────────────────────────────────
@@ -32,22 +32,29 @@ export const AUTOR = {
 /**
  * EVA — guía de aprendizaje dentro del laboratorio.
  *
- * `assetSrc: null` significa que se usa el TRATAMIENTO VISUAL PROVISIONAL: el
- * monograma geométrico de `components/eva/EvaMark.tsx`. Deliberadamente no es
- * un rostro ni una figura humana.
+ * Dos imágenes distintas, que conviene no confundir:
+ *  · El LOGOTIPO del sitio es el monograma en rombo de `components/eva/EvaMark.tsx`.
+ *    Identifica al laboratorio y vive en la cabecera, la barra lateral y el pie.
+ *  · El RETRATO de aquí abajo es la cara del asistente flotante, y solo aparece
+ *    ahí. Son dos cosas: una marca y una interlocutora.
  *
- * PARA REEMPLAZARLO: deja el archivo oficial en `public/` y pon aquí su ruta,
- * por ejemplo `assetSrc: '/eva.svg'`. `EvaMark` lo detecta y deja de dibujar el
- * monograma. No hay que tocar ningún otro archivo.
+ * Las dos expresiones vienen del mismo encuadre para que el retrato no salte al
+ * abrir el panel: serena cuando está cerrada, sonriente cuando la abres.
+ *
+ * PARA SUSTITUIRLAS: reemplaza los archivos de `public/eva/` conservando el
+ * recorte cuadrado, o cambia estas rutas. No hay que tocar ningún componente.
  */
 export const EVA = {
   nombre: 'EVA',
   /** Función, no personalidad. */
   rol: 'Guía del laboratorio',
-  assetSrc: null as string | null,
+  retrato: '/eva/eva.webp',
+  retratoSonrisa: '/eva/eva-sonrisa.webp',
   /** Cómo se presenta cuando alguien la abre por primera vez. */
   presentacion:
     'Acompaño cada sección. Explico lo que hace y, sobre todo, lo que no hace.',
+  /** Texto del botón flotante para lectores de pantalla. */
+  invitacion: 'Preguntas sobre esta sección',
   /** Límite declarado, visible en la interfaz. */
   limite:
     'Respuestas escritas de antemano, no generadas. EVA no consulta ningún modelo ni envía lo que escribes a ninguna parte.',

@@ -42,19 +42,34 @@ documento final se descarga en Markdown.
 
 ## EVA
 
-EVA acompaña cada sección: presenta lo que hace, y sobre todo lo que no hace,
-con preguntas que se despliegan.
+EVA es un botón flotante abajo a la izquierda, presente en todas las páginas.
+Al pulsarlo abre un panel con lo que hace esa sección —y sobre todo lo que no
+hace— y las preguntas que suelen seguir. No ocupa sitio en la maquetación: flota
+sobre el contenido, se cierra con Escape o pulsando fuera, y al cambiar de
+sección se cierra sola para no mostrar el panel de una página en otra.
 
-Dos límites deliberados, declarados en la propia interfaz:
+Vive montada una sola vez en el layout raíz
+([`src/components/eva/EvaDock.tsx`](src/components/eva/EvaDock.tsx)) y sabe en
+qué sección está por la ruta.
+
+Dos límites deliberados, declarados en el propio panel:
 
 - **EVA no es un modelo.** Todo lo que dice está escrito de antemano en
   [`src/content/eva.ts`](src/content/eva.ts). No hay llamadas a ninguna API, ni
   claves, ni costo por uso.
-- **EVA no tiene rostro.** Su identificador visual es un monograma geométrico
-  (`src/components/eva/EvaMark.tsx`), marcado como tratamiento provisional. Para
-  sustituirlo por la imagen oficial: deja el archivo en `public/` y apunta a él
-  desde `EVA.assetSrc` en [`src/lib/brand.ts`](src/lib/brand.ts). Ningún otro
-  archivo hay que tocar.
+- **EVA no analiza lo que escribes.** Nada sale del navegador.
+
+Dos imágenes que conviene no confundir:
+
+| | Qué es | Dónde vive |
+|---|---|---|
+| Monograma en rombo | Logotipo del laboratorio | Cabecera, barra lateral, pie (`EvaMark.tsx`) |
+| Retrato de EVA | La cara del asistente | Solo el botón flotante y su panel (`public/eva/`) |
+
+El retrato tiene dos expresiones del mismo encuadre —serena cerrada, sonriente
+abierta— para que no salte al abrir. Para sustituirlas: reemplaza los archivos
+de `public/eva/` conservando el recorte cuadrado, o cambia las rutas en
+[`src/lib/brand.ts`](src/lib/brand.ts). Ningún componente hay que tocar.
 
 ---
 

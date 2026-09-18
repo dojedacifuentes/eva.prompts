@@ -6,6 +6,7 @@ import { MobileNav } from '@/components/layout/MobileNav';
 import { TopBar } from '@/components/layout/TopBar';
 import { SiteFooter } from '@/components/layout/SiteFooter';
 import { GridBackground } from '@/components/common/GridBackground';
+import { EvaDock } from '@/components/eva/EvaDock';
 import { SITIO, AUTOR } from '@/lib/brand';
 
 const spaceGrotesk = Space_Grotesk({
@@ -74,6 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </div>
         <MobileNav />
+        <EvaDock />
       </body>
     </html>
   );

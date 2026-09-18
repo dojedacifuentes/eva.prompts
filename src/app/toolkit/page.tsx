@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Wrench, ArrowRight, Check, AlertTriangle, Zap, Shield, Brain, ExternalLink } from 'lucide-react';
-import { EvaAssistant } from '@/components/eva/EvaAssistant';
 
 const officialTools = [
   {
@@ -142,8 +141,6 @@ export default function ToolkitPage() {
           Flujos de referencia, checklists de verificación y guías rápidas de herramientas.
         </p>
       </div>
-
-      <EvaAssistant section="toolkit" />
 
       {/* Tools */}
       <section className="space-y-4">

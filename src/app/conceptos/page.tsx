@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, RotateCcw, Check, X, Library } from 'lucide-react';
 import { flashcards, categories } from '@/data/flashcards';
-import { EvaAssistant } from '@/components/eva/EvaAssistant';
 
 const catColors: Record<string, string> = {
   'Vocabulario IA': 'border-cyan-500/35 bg-cyan-500/8 text-cyan-400',
@@ -97,8 +96,6 @@ export default function ConceptosPage() {
           Repaso de vocabulario y conceptos de IA aplicada al Derecho. Pulsa <kbd className="px-1.5 py-0.5 rounded border border-white/10 bg-white/5 text-[13px] mono">espacio</kbd> para voltear, <kbd className="px-1.5 py-0.5 rounded border border-white/10 bg-white/5 text-[13px] mono">←→</kbd> para navegar.
         </p>
       </div>
-
-      <EvaAssistant section="conceptos" />
 
       {/* Category filter */}
       <div className="flex flex-wrap gap-2">

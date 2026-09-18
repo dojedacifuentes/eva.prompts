@@ -1,16 +1,11 @@
 'use client';
-import { EVA } from '@/lib/brand';
-
 /**
- * IDENTIFICADOR VISUAL DE EVA — TRATAMIENTO PROVISIONAL Y REEMPLAZABLE.
+ * LOGOTIPO DEL LABORATORIO: un rombo de líneas con las letras EVA.
  *
- * No existe en el repositorio una referencia visual oficial de EVA, así que se
- * dibuja un monograma geométrico: un rombo de líneas con las letras EVA y un
- * punto que respira. Deliberadamente NO es un rostro, ni una figura humana, ni
- * una fotografía de persona.
- *
- * PARA REEMPLAZARLO: deja el archivo oficial en `public/` y apunta a él desde
- * `EVA.assetSrc` en `lib/brand.ts`. Este componente lo usará sin más cambios.
+ * Es una marca, no un retrato. La cara de EVA —su retrato fotográfico— vive
+ * únicamente en el asistente flotante (`EvaDock`), que la lee de `EVA.retrato`
+ * en `lib/brand.ts`. Aquí, deliberadamente, no hay rostro ni figura humana:
+ * una cabecera se firma con un logotipo, no con una foto de carnet.
  */
 export function EvaMark({
   size = 32,
@@ -22,21 +17,6 @@ export function EvaMark({
   className?: string;
   muted?: boolean;
 }) {
-  if (EVA.assetSrc) {
-    return (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
-        src={EVA.assetSrc}
-        alt=""
-        aria-hidden="true"
-        width={size}
-        height={size}
-        className={className}
-        style={{ display: 'block' }}
-      />
-    );
-  }
-
   const gid = `eva-mark-${muted ? 'm' : 'n'}`;
   const op = muted ? 0.45 : 1;
 
@@ -85,25 +65,5 @@ export function EvaMark({
         EVA
       </text>
     </svg>
-  );
-}
-
-/**
- * Retrato de EVA a mayor tamaño, para cabeceras de sección. Mismo monograma con
- * un halo y un anillo lento: presencia sin rostro.
- */
-export function EvaAvatar({ size = 44, className = '' }: { size?: number; className?: string }) {
-  return (
-    <span
-      className={`relative inline-flex shrink-0 items-center justify-center rounded-xl border border-cyan-500/25 bg-cyan-500/[0.06] ${className}`}
-      style={{ width: size, height: size }}
-    >
-      <span
-        aria-hidden
-        className="pointer-events-none absolute inset-0 rounded-xl"
-        style={{ boxShadow: '0 0 18px oklch(0.71 0.17 200 / 0.14) inset' }}
-      />
-      <EvaMark size={Math.round(size * 0.66)} />
-    </span>
   );
 }

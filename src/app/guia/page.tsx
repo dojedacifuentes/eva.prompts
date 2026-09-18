@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, BookOpen } from 'lucide-react';
 import { PARTES, ETIQUETAS, recuento } from '@/content/guia';
-import { EvaAssistant } from '@/components/eva/EvaAssistant';
 
 export const metadata: Metadata = {
   title: 'Guía completa de prompting jurídico',
@@ -39,8 +38,6 @@ export default function GuiaPage() {
           </span>
         </div>
       </header>
-
-      <EvaAssistant section="guia" />
 
       <div className="space-y-8">
         {PARTES.map(parte => (

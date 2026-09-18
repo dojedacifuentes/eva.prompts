@@ -19,7 +19,6 @@ import {
   type DocumentContextMode, type PrecisionConfig, type CompilerInput,
 } from '@/data/promptBuilder';
 import { generatePromptPDF } from '@/lib/promptPdf';
-import { EvaAssistant } from '@/components/eva/EvaAssistant';
 import { downloadBlob } from '@/lib/utils';
 
 // ── Types ──────────────────────────────────────────────────────────────────────
@@ -755,7 +754,6 @@ export default function PromptLabPage() {
               <StepWrapper stepNum={1} accent="cyan" title="¿Qué necesitas hacer?"
                 subtitle="Selecciona el tipo de tarea jurídica"
               >
-                <EvaAssistant section="prompt-lab" className="mb-6" />
                 <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
                   {purposes.map((p, i) => (
                     <FlowCard key={p.id} emoji={p.emoji} label={p.label}

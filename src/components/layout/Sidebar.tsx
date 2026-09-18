@@ -82,7 +82,9 @@ export function Sidebar() {
         ))}
       </nav>
 
-      <div className="space-y-1.5 border-t border-white/[0.06] px-4 py-4">
+      {/* `pb-28` reserva el hueco del botón flotante de EVA, que se apoya en
+          esta esquina: sin él, el crédito quedaría debajo del retrato. */}
+      <div className="space-y-1.5 border-t border-white/[0.06] px-4 pb-28 pt-4">
         <p className="text-[13px] leading-snug text-zinc-600">{SITIO.tesis}</p>
         <div className="mono text-[13px] uppercase tracking-widest text-zinc-700">
           {AUTOR.credito}

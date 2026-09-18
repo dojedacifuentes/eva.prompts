@@ -19,7 +19,6 @@ import {
   type EtapaCurso, type StageId,
 } from '@/content/curso/etapas';
 import { useCurso } from '@/lib/curso/store';
-import { EvaAssistant } from '@/components/eva/EvaAssistant';
 
 // ─── Indicador de etapas ─────────────────────────────────────────────────────
 
@@ -88,8 +87,6 @@ export function CursoShell({ children }: { children: ReactNode }) {
     return <div className="mx-auto w-full max-w-3xl px-4 py-6 sm:px-6 lg:py-10">{children}</div>;
   }
 
-  const primera = stage.id === STAGES[0].id;
-
   return (
     <div className="mx-auto w-full max-w-3xl px-4 py-6 sm:px-6 lg:py-10">
       <header className="mb-6 space-y-4">
@@ -107,11 +104,6 @@ export function CursoShell({ children }: { children: ReactNode }) {
           <p className="mt-1.5 text-sm leading-relaxed text-zinc-400">{stage.brief}</p>
         </div>
       </header>
-
-      {/* EVA presenta el curso una sola vez, en la primera etapa. Repetirla en
-          las cinco sería ruido: a partir de aquí lo que hay que hacer está en
-          la consigna de cada etapa. */}
-      {primera && <EvaAssistant section="curso" className="mb-6" />}
 
       <div className="space-y-6">{children}</div>
 

@@ -3,7 +3,6 @@ import { ArrowRight, GraduationCap, Zap } from 'lucide-react';
 import { SECCIONES } from '@/lib/nav';
 import { SITIO } from '@/lib/brand';
 import { TIEMPOS, CONCLUSION, PILARES } from '@/content/tesis';
-import { EvaAssistant } from '@/components/eva/EvaAssistant';
 import { EvaMark } from '@/components/eva/EvaMark';
 
 const acentoTexto = {
@@ -61,11 +60,6 @@ export default function InicioPage() {
           </Link>
         </div>
       </section>
-
-      {/* ── EVA ───────────────────────────────────────────────────────────── */}
-      <div className="mt-10">
-        <EvaAssistant section="inicio" />
-      </div>
 
       {/* ── El arco: tres tiempos ─────────────────────────────────────────── */}
       <section aria-labelledby="arco" className="mt-16">
